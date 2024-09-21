@@ -79,9 +79,11 @@ flutter:
     - family: AnonymousPro-Bold
       fonts:
         - asset: fonts/AnonymousPro-Bold.ttf
-    - family: LexendDeca-Regular
+    - family: LexendDeca
       fonts:
         - asset: fonts/LexendDeca-Regular.ttf
+        - asset: fonts/LexendDeca-ExtraBold.ttf
+        - asset: fonts/LexendDeca-Bold.ttf
         #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

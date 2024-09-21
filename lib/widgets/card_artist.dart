@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_aplikasi_musik/colors/color.dart';
+import 'package:tugas_aplikasi_musik/widgets/button.dart';
 
 class CardArtist extends StatelessWidget {
   final String image;
@@ -73,54 +74,18 @@ class CardArtist extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      // Center align items in the stack
-                      children: [
-                        // Button Container
-                        Container(
-                          width: 75,
-                          height: 30,
-                          child: OutlinedButton(
-                            onPressed: btnOnPressed,
-                            child: null,
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.white),
-                            ),
-                          ),
-                        ),
-                        IgnorePointer(
-                          child: Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // Center the content
-                              children: [
-                                Icon(
-                                  Icons.add,
-                                  color: Colors.black,
-                                  size: 15,
-                                ),
-                                Text(
-                                  "Follow",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontFamily: 'LexendDeca-Regular'),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              )
+              MyButton(
+                text: "Follow",
+                textColor: Colors.black,
+                backgroundColor: Colors.white,
+                onPressed: btnOnPressed,
+                width: 75,
+                height: 30,
+                icon: Icons.add,
+                rightMargin: 20,
+                fontWeight: FontWeight.normal,
+                fontSize: 10,
+              ),
             ],
           ),
         ),
