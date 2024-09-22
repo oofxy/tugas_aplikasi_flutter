@@ -38,7 +38,7 @@ class MyTextField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             hintStyle: TextStyle(
-                fontFamily: 'LexendDeca-Regular', color: hintTextColor),
+                fontFamily: 'Poppins', color: hintTextColor),
             filled: true,
             fillColor: backgroundColor,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(6),
@@ -53,7 +53,7 @@ class MyTextField extends StatelessWidget {
             ),
           ),
           style: TextStyle(
-              fontFamily: 'LexendDeca-Regular', color: textColor, fontSize: 15),
+              fontFamily: 'Poppins', color: textColor, fontSize: 15),
         ),
       ),
     );

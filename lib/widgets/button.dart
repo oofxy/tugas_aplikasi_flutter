@@ -81,7 +81,7 @@ class MyButton extends StatelessWidget {
                         text,
                         style: TextStyle(
                             fontSize: fontSize,
-                            fontFamily: 'LexendDeca',
+                            fontFamily: 'Poppins',
                             fontWeight: fontWeight,
                             color: textColor ?? Colors.black),
                       ),

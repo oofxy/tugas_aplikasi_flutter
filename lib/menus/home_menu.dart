@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tugas_aplikasi_musik/colors/color.dart';
 
 class HomeMenu extends StatelessWidget {
   const HomeMenu({super.key});
@@ -7,15 +8,22 @@ class HomeMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("ログインのページ"),
-      ),
-      body: Center(
+      backgroundColor: color().black,
+      body: Container(
+        margin: EdgeInsets.only(right: 40, left: 40, top: 40),
         child: Column(
           children: [
-            Text("Press to move to another page"),
-            ElevatedButton(onPressed: (){
-            }, child: Text("Login"))
+            Text(
+              'Artist you might like',
+              style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                  fontSize: 27),
+            ),
+            Row(
+
+            )
           ],
         ),
       ),
