@@ -26,7 +26,7 @@ class Login extends StatelessWidget {
                   Image.asset(
                     'images/login_background_image.png',
                     width: 500,
-                    height: 800,
+                    height: 972.5,
                     fit: BoxFit.cover,
                   ),
                   Container(
@@ -143,7 +143,7 @@ class Login extends StatelessWidget {
                                     Get.toNamed('/dashboard');
                                   }
                                 },
-                                width: 370,
+                                width: 367,
                                 height: 45,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800,
@@ -157,7 +157,7 @@ class Login extends StatelessWidget {
                                 textColor: Colors.white,
                                 backgroundColor: Colors.transparent,
                                 onPressed: () {},
-                                width: 370,
+                                width: 367,
                                 height: 45,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,

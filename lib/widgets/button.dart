@@ -61,7 +61,7 @@ class MyButton extends StatelessWidget {
                       backgroundColor:
                           MaterialStateProperty.all(backgroundColor),
                       side: MaterialStateProperty.all(outlinedColor != null
-                          ? BorderSide(color: outlinedColor!, width: 2)
+                          ? BorderSide(color: outlinedColor!, width: 1)
                           : BorderSide.none)),
                 ),
               ),
