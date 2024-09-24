@@ -44,7 +44,7 @@ class HomeMenu extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 100,),
+            SizedBox(height: 80,),
             Container(
               padding: EdgeInsets.only(left: 10),
               child: Row(

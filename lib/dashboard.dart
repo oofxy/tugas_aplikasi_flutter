@@ -17,8 +17,8 @@ class Dashboard extends StatelessWidget {
 
     final List<Widget> menus = [
       HomeMenu(),
-      LibraryMenu(),
       SearchMenu(),
+      LibraryMenu(),
       ProfileMenu()
     ];
 
@@ -37,13 +37,13 @@ class Dashboard extends StatelessWidget {
               backgroundColor: color().black2,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.library_music_rounded),
-              label: "Library",
+              icon: Icon(Icons.search),
+              label: "Search",
               backgroundColor: color().black2,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "Search",
+              icon: Icon(Icons.library_music_rounded),
+              label: "Library",
               backgroundColor: color().black2,
             ),
             BottomNavigationBarItem(

@@ -16,7 +16,7 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 75,
       width: 408,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6), color: color().black2),
@@ -31,7 +31,7 @@ class Item extends StatelessWidget {
                   .of(context)
                   .size
                   .height,
-              width: 70,
+              width: 75,
               fit: BoxFit.cover,
             ),
             SizedBox(
@@ -77,7 +77,7 @@ class Item extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.only(left: 2),
-                  width: 14,
+                  width: 12,
                   height: MediaQuery
                       .of(context)
                       .size
