@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_aplikasi_musik/colors/color.dart';
 
 class GenreCard extends StatelessWidget {
   final String text;
@@ -12,7 +13,7 @@ class GenreCard extends StatelessWidget {
       child: Container(
         height: 40,
         decoration: BoxDecoration(
-          color: Color(0xffD9D9D9),
+          color: color().black3,
           borderRadius: BorderRadius.circular(28),
         ),
         padding: EdgeInsets.symmetric(horizontal: 22), // Padding for better spacing
@@ -23,6 +24,7 @@ class GenreCard extends StatelessWidget {
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w800,
               fontSize: 16,
+              color: Colors.white
             ),
           ),
         ),

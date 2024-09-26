@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:tugas_aplikasi_musik/colors/song_colors.dart';
 import 'package:tugas_aplikasi_musik/models/song_model.dart';
 
@@ -85,9 +84,9 @@ class SongData {
         "Pomplamoose, John Shroeder",
         SongColors().songColours[6]),
     ModelSong(
-        "https://www.creativefabrica.com/wp-content/uploads/2023/02/22/Car-Drift-Phonk-Red-Neon-Night-Painting-62144687-1.png",
-        "Les Champs-Elysees",
-        "Pomplamoose, John Shroeder",
+        "https://s3-aop.plusmember.jp/prod/public/yorushika/contents/discography/9088008c68f0cc13f0024397770a066a.jpeg",
+        "ヒッチコック",
+        "ヨルシカ",
         SongColors().songColours[7]),
     ModelSong(
         "https://f4.bcbits.com/img/a1936230053_65",

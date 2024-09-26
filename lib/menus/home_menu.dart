@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tugas_aplikasi_musik/adapter/artist_card_adapter.dart';
 import 'package:tugas_aplikasi_musik/adapter/song_adapter.dart';
 import 'package:tugas_aplikasi_musik/colors/color.dart';
@@ -16,7 +15,7 @@ class HomeMenu extends StatelessWidget {
       backgroundColor: color().black,
       body: Container(
         margin: EdgeInsets.only(top: 79),
-        padding: EdgeInsets.only(left: 20, right: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             Container(
@@ -56,14 +55,13 @@ class HomeMenu extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Container(
-              height: 333,
+              height: 345,
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
                 itemCount: SongData().songData.length,
                 itemBuilder: (context, index) {
                   return Container(
                     padding: EdgeInsets.only(bottom: 7),
-                    // Set horizontal margin
                     child: SongAdapter(
                       modelSong: SongData().songData[index],
                     ),

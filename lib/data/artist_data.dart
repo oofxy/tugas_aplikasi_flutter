@@ -4,8 +4,8 @@ import 'package:tugas_aplikasi_musik/models/card_artist_model.dart';
 class ArtistData {
   List<ModelCard> artistData = [
     ModelCard(
-        "https://media.newyorker.com/photos/5e877cf045c1af00083b719c/4:3/w_1907,h_1430,c_limit/Hsu-BillWithers.jpg",
-        "Bill Withers",
+        "https://a.storyblok.com/f/178900/960x542/271d20152d/odetari.png/m/filters:quality(95)format(webp)",
+        "Odetari",
         "853",
         ArtistCardColors().artistCardColors[0]),
     ModelCard(

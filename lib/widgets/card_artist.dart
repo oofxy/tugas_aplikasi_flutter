@@ -20,8 +20,8 @@ class CardArtist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 297,
-      width: 360,
+      height: 305,
+      width: 375,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(6.0),
@@ -34,21 +34,21 @@ class CardArtist extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(6.0)),
                 child: Image.network(
                   image,
-                  height: 170,
-                  width: 380,
+                  height: 175,
+                  width: 375,
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                height: 170,
-                width: 380,
+                height: 175,
+                width: 375,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     end: Alignment.bottomCenter,
                     begin: Alignment.center,
                     colors: [
                       Colors.transparent, // Adjust opacity for darkness
-                      Colors.black.withOpacity(0.65), // Adjust opacity for darkness
+                      Colors.black.withOpacity(0.3), // Adjust opacity for darkness
                     ],
                   ),
                 ),
@@ -87,18 +87,21 @@ class CardArtist extends StatelessWidget {
               ),
             ),
           ),
-          MyButton(
-            text: "Follow",
-            textColor: Colors.black,
-            backgroundColor: Colors.white,
-            onPressed: () {},
-            width: 95,
-            height: 35,
-            icon: Icons.add,
-            rightMargin: 20,
-            fontWeight: FontWeight.normal,
-            fontSize: 12,
-            outlinedColor: Colors.black,
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: MyButton(
+              text: "Follow",
+              textColor: Colors.black,
+              backgroundColor: Colors.white,
+              onPressed: () {},
+              width: 95,
+              height: 37,
+              icon: Icons.add,
+              fontWeight: FontWeight.normal,
+              fontSize: 12,
+              outlinedColor: Colors.black,
+              borderRadius: 20,
+            ),
           ),
         ],
       ),
