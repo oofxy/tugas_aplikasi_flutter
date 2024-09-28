@@ -12,19 +12,23 @@ class MyTextField extends StatelessWidget {
   final VoidCallback? onPressed;
   final double height;
   final double width;
-  final TextEditingController controller;
+  final TextEditingController? controller;
+  final void Function(String?)? onChange;
 
-  const MyTextField({super.key,
-    required this.hintText,
-    required this.textColor,
-    required this.backgroundColor,
-    required this.isObscured,
-    this.iconShow,
-    this.iconHide,
-    this.onPressed,
-    required this.hintTextColor,
-    required this.height,
-    required this.width, required this.controller});
+  const MyTextField(
+      {super.key,
+      required this.hintText,
+      required this.textColor,
+      required this.backgroundColor,
+      required this.isObscured,
+      this.iconShow,
+      this.iconHide,
+      this.onPressed,
+      this.onChange,
+      required this.hintTextColor,
+      required this.height,
+      required this.width,
+      this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +39,14 @@ class MyTextField extends StatelessWidget {
         child: TextField(
           controller: controller,
           obscureText: isObscured,
+          onChanged: onChange,
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: TextStyle(
-                fontFamily: 'LexendDeca-Regular', color: hintTextColor),
+            hintStyle: TextStyle(fontFamily: 'Poppins', color: hintTextColor),
             filled: true,
             fillColor: backgroundColor,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(6),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6),
                 borderSide: BorderSide.none),
             suffixIcon: IconButton(
               icon: Icon(
@@ -52,8 +57,8 @@ class MyTextField extends StatelessWidget {
               onPressed: onPressed,
             ),
           ),
-          style: TextStyle(
-              fontFamily: 'LexendDeca-Regular', color: textColor, fontSize: 15),
+          style:
+              TextStyle(fontFamily: 'Poppins', color: textColor, fontSize: 15),
         ),
       ),
     );

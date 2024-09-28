@@ -1,94 +1,106 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_aplikasi_musik/colors/color.dart';
 import 'package:tugas_aplikasi_musik/widgets/button.dart';
 
 class CardArtist extends StatelessWidget {
   final String image;
   final String name;
   final String followers;
+  final Color backgroundColor;
   final VoidCallback iconOnPressed;
-  final VoidCallback btnOnPressed;
 
-  const CardArtist(
-      {super.key,
-      required this.image,
-      required this.name,
-      required this.followers,
-      required this.iconOnPressed,
-      required this.btnOnPressed});
+  const CardArtist({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.followers,
+    required this.iconOnPressed,
+    required this.backgroundColor,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: color().black,
-      body: Center(
-        child: Container(
-          height: 312,
-          width: 380,
-          decoration: BoxDecoration(
-            color: color().lightBrown,
-            borderRadius: BorderRadius.circular(6.0),
-          ),
-          child: Column(
+    return Container(
+      height: 297,
+      width: 360,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(6.0),
+      ),
+      child: Column(
+        children: [
+          Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                // Round the top corners
+                borderRadius: BorderRadius.vertical(top: Radius.circular(6.0)),
                 child: Image.network(
                   image,
-                  height: 200,
+                  height: 170,
                   width: 380,
                   fit: BoxFit.cover,
                 ),
               ),
-              ListTile(
-                title: Stack(
-                  children: [
-                    Text(
-                      name,
-                      style: TextStyle(
-                          fontFamily: 'AnonymousPro-Bold', fontSize: 30),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 35),
-                      child: Text(
-                        followers + "K Followers",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'AnonymousPro-Bold',
-                        ),
-                      ),
-                    ),
-                  ],
+              Container(
+                height: 170,
+                width: 380,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    end: Alignment.bottomCenter,
+                    begin: Alignment.center,
+                    colors: [
+                      Colors.transparent, // Adjust opacity for darkness
+                      Colors.black.withOpacity(0.65), // Adjust opacity for darkness
+                    ],
+                  ),
                 ),
-                trailing: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    IconButton(
-                        onPressed: iconOnPressed,
-                        icon: Icon(
-                          Icons.more_horiz,
-                          size: 30,
-                          color: Colors.black,
-                        )),
-                  ],
-                ),
-              ),
-              MyButton(
-                text: "Follow",
-                textColor: Colors.black,
-                backgroundColor: Colors.white,
-                onPressed: btnOnPressed,
-                width: 75,
-                height: 30,
-                icon: Icons.add,
-                rightMargin: 20,
-                fontWeight: FontWeight.normal,
-                fontSize: 10,
               ),
             ],
           ),
-        ),
+          ListTile(
+            title: Stack(
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                    fontFamily: 'AnonymousPro-Bold',
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 35),
+                  child: Text(
+                    followers + "K Followers",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: 'AnonymousPro-Bold',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            trailing: IconButton(
+              onPressed: iconOnPressed,
+              icon: Icon(
+                Icons.more_horiz,
+                size: 30,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          MyButton(
+            text: "Follow",
+            textColor: Colors.black,
+            backgroundColor: Colors.white,
+            onPressed: () {},
+            width: 95,
+            height: 35,
+            icon: Icons.add,
+            rightMargin: 20,
+            fontWeight: FontWeight.normal,
+            fontSize: 12,
+            outlinedColor: Colors.black,
+          ),
+        ],
       ),
     );
   }
