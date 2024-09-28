@@ -9,4 +9,5 @@ class color {
   final Color red = Color(0xffad3535);
   final Color greyTextColor = Color(0xff545454);
   final Color greyOutlined = Color(0xff7C7C7C);
+  final Color darkRed = Color(0xff433838);
 }
