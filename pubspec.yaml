@@ -89,6 +89,9 @@ flutter:
       fonts:
         - asset: fonts/Poppins-Medium.ttf
         - asset: fonts/Poppins-ExtraBold.ttf
+    - family: MPLUSRounded1c-Bold
+      fonts:
+        - asset: fonts/MPLUSRounded1c-Bold.ttf
         #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

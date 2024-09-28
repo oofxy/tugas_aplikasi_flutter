@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tugas_aplikasi_musik/dashboard.dart';
 import 'package:tugas_aplikasi_musik/login.dart';
-import 'package:tugas_aplikasi_musik/menus/search_menu.dart';
+
+import 'menus/library_menu/library_artist.dart';
+import 'menus/library_menu/library_music.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => Login()),
-        GetPage(name: '/dashboard', page: () => Dashboard())
+        GetPage(name: '/dashboard', page: () => Dashboard()),
+        GetPage(name: '/LibraryArtist', page: () => LibraryArtist()),
+        GetPage(name: '/LibraryMusic', page: () => LibraryMusic()),
       ],
     );
   }

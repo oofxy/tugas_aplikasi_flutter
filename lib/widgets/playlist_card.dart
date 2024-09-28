@@ -15,8 +15,9 @@ class PlaylistCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
+        height: 230,
+        width: 342,
         decoration: BoxDecoration(color: color().black),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,8 +26,8 @@ class PlaylistCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(6),
               child: Image.network(
                 image,
-                height: 240,
-                width: 240,
+                height: 210,
+                width: 210,
               ),
             ),
             Container(
@@ -37,31 +38,30 @@ class PlaylistCard extends StatelessWidget {
                 children: [
                   MyText(
                     text: "Playlist Name",
-                    fontSize: 18,
+                    fontSize: 15,
                   ),
                   MyText(
                     text: playlistName,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                    fontSize: 13,
                   ),
                   SizedBox(
                     height: 30,
                   ),
                   MyText(
                     text: "Made by",
-                    fontSize: 18,
+                    fontSize: 15,
                   ),
                   MyText(
                     text: madeBy,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15,
+                    fontSize: 13,
                   ),
                 ],
               ),
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

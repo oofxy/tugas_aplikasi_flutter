@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:tugas_aplikasi_musik/adapter/genre_adapter.dart';
 import 'package:tugas_aplikasi_musik/colors/color.dart';
 import 'package:tugas_aplikasi_musik/data/genre_data.dart';
-import 'package:tugas_aplikasi_musik/widgets/genre_card.dart';
 import 'package:tugas_aplikasi_musik/widgets/text.dart';
 import 'package:tugas_aplikasi_musik/widgets/text_field.dart';
 import 'package:tugas_aplikasi_musik/controller/search_controller.dart';
@@ -52,7 +51,7 @@ class SearchMenu extends StatelessWidget {
                 itemCount: GenreData().genreDataRow1.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 7),
+                    margin: EdgeInsets.only(right: 11),
                     child: GenreAdapter(
                       genreCardModel: GenreData().genreDataRow1[index],
                     ),
@@ -67,7 +66,7 @@ class SearchMenu extends StatelessWidget {
                 itemCount: GenreData().genreDataRow2.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 7),
+                    margin: EdgeInsets.only(right: 11),
                     child: GenreAdapter(
                       genreCardModel: GenreData().genreDataRow2[index],
                     ),
@@ -82,7 +81,7 @@ class SearchMenu extends StatelessWidget {
                 itemCount: GenreData().genreDataRow3.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 7),
+                    margin: EdgeInsets.only(right: 11),
                     child: GenreAdapter(
                       genreCardModel: GenreData().genreDataRow3[index],
                     ),

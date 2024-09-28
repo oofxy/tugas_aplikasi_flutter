@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tugas_aplikasi_musik/colors/color.dart';
 import 'package:tugas_aplikasi_musik/menus/home_menu.dart';
-import 'package:tugas_aplikasi_musik/menus/library_menu.dart';
 import 'package:tugas_aplikasi_musik/menus/profile_menu.dart';
 import 'package:tugas_aplikasi_musik/menus/search_menu.dart';
 import 'Controller/dashboard_controller.dart';
+import 'menus/library_menu/library_menu.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});

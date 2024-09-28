@@ -7,48 +7,37 @@ class MyButton extends StatelessWidget {
   final Color? iconColor;
   final Color backgroundColor;
   final Color? outlinedColor;
-  final double? leftMargin;
-  final double? topMargin;
-  final double? rightMargin;
-  final double? bottomMargin;
   final double width;
   final double height;
   final VoidCallback onPressed;
   final double fontSize;
   final FontWeight fontWeight;
+  final double? borderRadius; // Add borderRadius parameter
 
-  const MyButton(
-      {super.key,
-      required this.text,
-      this.textColor,
-      this.icon,
-      this.iconColor,
-      required this.backgroundColor,
-      this.outlinedColor,
-      this.leftMargin,
-      this.topMargin,
-      this.rightMargin,
-      this.bottomMargin,
-      required this.onPressed,
-      required this.width,
-      required this.height,
-      required this.fontSize,
-      required this.fontWeight});
+  const MyButton({
+    super.key,
+    required this.text,
+    this.textColor,
+    this.icon,
+    this.iconColor,
+    required this.backgroundColor,
+    this.outlinedColor,
+    required this.onPressed,
+    required this.width,
+    required this.height,
+    required this.fontSize,
+    required this.fontWeight,
+    this.borderRadius, // Default radius value
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          left: leftMargin ?? 0,
-          top: topMargin ?? 0,
-          right: rightMargin ?? 0,
-          bottom: bottomMargin ?? 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Stack(
             alignment: Alignment.center,
-            // Center align items in the stack
             children: [
               // Button Container
               Container(
@@ -58,18 +47,22 @@ class MyButton extends StatelessWidget {
                   onPressed: onPressed,
                   child: null,
                   style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(backgroundColor),
-                      side: MaterialStateProperty.all(outlinedColor != null
-                          ? BorderSide(color: outlinedColor!, width: 1)
-                          : BorderSide.none)),
+                    backgroundColor: MaterialStateProperty.all(backgroundColor),
+                    side: MaterialStateProperty.all(outlinedColor != null
+                        ? BorderSide(color: outlinedColor!, width: 1.5)
+                        : BorderSide.none),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(borderRadius ?? 6), // Set the radius here
+                      ),
+                    ),
+                  ),
                 ),
               ),
               IgnorePointer(
                 child: Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    // Center the content
                     children: [
                       if (icon != null)
                         Icon(
@@ -80,10 +73,11 @@ class MyButton extends StatelessWidget {
                       Text(
                         text,
                         style: TextStyle(
-                            fontSize: fontSize,
-                            fontFamily: 'Poppins',
-                            fontWeight: fontWeight,
-                            color: textColor ?? Colors.black),
+                          fontSize: fontSize,
+                          fontFamily: 'Poppins',
+                          fontWeight: fontWeight,
+                          color: textColor ?? Colors.black,
+                        ),
                       ),
                     ],
                   ),
