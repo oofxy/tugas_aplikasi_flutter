@@ -11,7 +11,7 @@ class LibraryArtist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LibraryController libraryController = Get.put(LibraryController());
+    final LibraryController libraryController = Get.find();
 
     return Scaffold(
       backgroundColor: color().black,
@@ -54,18 +54,13 @@ class LibraryArtist extends StatelessWidget {
             Container(
               height: 719,
               width: 500,
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: ArtistData().artistData.length,
+              child:  Obx(() => ListView.builder(
+                itemCount: libraryController.library.length, // Use library instead of artistData
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    child: ArtistCardAdapter(
-                      modelCard: ArtistData().artistData[index],
-                    ),
-                  );
+                  final artist = libraryController.library[index];
+                  return ArtistCardAdapter(modelCard: artist);
                 },
-              ),
+              )),
             ),
           ],
         ),
