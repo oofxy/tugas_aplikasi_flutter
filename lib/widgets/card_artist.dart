@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_aplikasi_musik/widgets/button.dart';
+import 'button.dart';
 
 class CardArtist extends StatelessWidget {
   final String image;
   final String name;
   final String followers;
   final Color backgroundColor;
-  final VoidCallback iconOnPressed;
+  final VoidCallback onPressed;
+  final bool isFavorite;
 
   const CardArtist({
     super.key,
     required this.image,
     required this.name,
     required this.followers,
-    required this.iconOnPressed,
+    required this.onPressed,
     required this.backgroundColor,
+    this.isFavorite = false, // Default value
   });
 
   @override
@@ -47,8 +49,8 @@ class CardArtist extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     begin: Alignment.center,
                     colors: [
-                      Colors.transparent, // Adjust opacity for darkness
-                      Colors.black.withOpacity(0.3), // Adjust opacity for darkness
+                      Colors.transparent,
+                      Colors.black.withOpacity(0.3),
                     ],
                   ),
                 ),
@@ -63,7 +65,7 @@ class CardArtist extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'AnonymousPro-Bold',
                     fontSize: 25,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Container(
@@ -79,7 +81,7 @@ class CardArtist extends StatelessWidget {
               ],
             ),
             trailing: IconButton(
-              onPressed: iconOnPressed,
+              onPressed: () {},
               icon: Icon(
                 Icons.more_horiz,
                 size: 30,
@@ -90,13 +92,14 @@ class CardArtist extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: 20),
             child: MyButton(
-              text: "Follow",
-              textColor: Colors.black,
-              backgroundColor: Colors.white,
-              onPressed: () {},
+              text: isFavorite ? "Unfollow" : "Follow", // Update text based on isFavorite
+              textColor: isFavorite ? Colors.white : Colors.black,
+              backgroundColor: isFavorite ? Colors.black : Colors.white,
+              onPressed: onPressed,
               width: 95,
               height: 37,
               icon: Icons.add,
+              iconColor: isFavorite ? Colors.white : Colors.black,
               fontWeight: FontWeight.normal,
               fontSize: 12,
               outlinedColor: Colors.black,

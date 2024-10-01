@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tugas_aplikasi_musik/bindings/binding.dart';
+import 'package:tugas_aplikasi_musik/controller/library_controller.dart';
 import 'package:tugas_aplikasi_musik/dashboard.dart';
 import 'package:tugas_aplikasi_musik/login.dart';
-import 'package:tugas_aplikasi_musik/menus/profile_menu.dart';
-
 import 'menus/library_menu/library_artist.dart';
 import 'menus/library_menu/library_music.dart';
 
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/LibraryArtist', page: () => LibraryArtist()),
         GetPage(name: '/LibraryMusic', page: () => LibraryMusic()),
       ],
+      initialBinding: MyBindings(),
     );
   }
 }

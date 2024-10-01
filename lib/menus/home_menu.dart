@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:tugas_aplikasi_musik/adapter/artist_card_adapter.dart';
 import 'package:tugas_aplikasi_musik/adapter/song_adapter.dart';
@@ -29,19 +30,35 @@ class HomeMenu extends StatelessWidget {
             ),
             Container(
               height: 320,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: ArtistData().artistData.length,
-                itemBuilder: (context, index) {
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 320,
+                  viewportFraction: 1,
+                  enableInfiniteScroll: true,
+                  autoPlay: true,
+                ),
+                items: ArtistData().artistData.map((artist) {
                   return Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
-                    // Set horizontal margin
                     child: ArtistCardAdapter(
-                      modelCard: ArtistData().artistData[index],
+                      modelCard: artist,
                     ),
                   );
-                },
+                }).toList(),
               ),
+              // ListView.builder(
+              //   scrollDirection: Axis.horizontal,
+              //   itemCount: ArtistData().artistData.length,
+              //   itemBuilder: (context, index) {
+              //     return Container(
+              //       margin: EdgeInsets.symmetric(horizontal: 10),
+              //       // Set horizontal margin
+              //       child: ArtistCardAdapter(
+              //         modelCard: ArtistData().artistData[index],
+              //       ),
+              //     );
+              //   },
+              // ),
             ),
             SizedBox(height: 80,),
             Container(
