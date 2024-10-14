@@ -17,7 +17,7 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      width: 408,
+      width: 388,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6), color: color().black2),
       child: InkWell(
@@ -31,7 +31,7 @@ class Item extends StatelessWidget {
                   .of(context)
                   .size
                   .height,
-              width: 70,
+              width: 75,
               fit: BoxFit.cover,
             ),
             SizedBox(

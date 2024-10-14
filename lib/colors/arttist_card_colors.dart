@@ -5,8 +5,8 @@ class ArtistCardColors {
   Color(0xffffe7d1),
   Color(0xffffc9c2),
   Color(0xffAABD9B),
-  Color(0xff779eb4),
-  Color(0xffad3535),
-  Color(0xff88B0A9),
+  Color(0xffaa9bcc),
+  Color(0xffC84D4D),
+  Color(0xffB5C0D0),
   ];
 }

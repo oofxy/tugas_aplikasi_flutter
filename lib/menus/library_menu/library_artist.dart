@@ -32,7 +32,9 @@ class LibraryArtist extends StatelessWidget {
                       height: 40,
                       fontSize: 16,
                       fontWeight: FontWeight.w800),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: 10,
+                  ),
                   MyButton(
                       text: "Music",
                       textColor: Colors.white,
@@ -52,15 +54,18 @@ class LibraryArtist extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 719,
+              height: 697,
               width: 500,
-              child:  Obx(() => ListView.builder(
-                itemCount: libraryController.library.length, // Use library instead of artistData
-                itemBuilder: (context, index) {
-                  final artist = libraryController.library[index];
-                  return ArtistCardAdapter(modelCard: artist);
-                },
-              )),
+              child: Obx(() => ListView.builder(
+                    itemCount: libraryController.library.length,
+                    // Use library instead of artistData
+                    itemBuilder: (context, index) {
+                      final artist = libraryController.library[index];
+                      return Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: ArtistCardAdapter(modelCard: artist));
+                    },
+                  )),
             ),
           ],
         ),

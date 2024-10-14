@@ -25,33 +25,36 @@ class Dashboard extends StatelessWidget {
     return Obx(() {
       return Scaffold(
         body: menus[dashboardController.selectedIndex.value],
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          currentIndex: dashboardController.selectedIndex.value,
-          onTap: dashboardController.changeMenu,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
-              backgroundColor: color().black2,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "Search",
-              backgroundColor: color().black2,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.library_music_rounded),
-              label: "Library",
-              backgroundColor: color().black2,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_rounded),
-              label: "Prfoile",
-              backgroundColor: color().black2,
-            )
-          ],
+        bottomNavigationBar: Container(
+          height: 80,
+          child: BottomNavigationBar(
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.white,
+            currentIndex: dashboardController.selectedIndex.value,
+            onTap: dashboardController.changeMenu,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_filled),
+                label: "Home",
+                backgroundColor: color().black2,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: "Search",
+                backgroundColor: color().black2,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.library_music_rounded),
+                label: "Library",
+                backgroundColor: color().black2,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded),
+                label: "Prfoile",
+                backgroundColor: color().black2,
+              )
+            ],
+          ),
         ),
       );
     });

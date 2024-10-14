@@ -52,7 +52,7 @@ class LibraryMusic extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 700,
+              height: 697,
               width: 500,
               child: ListView.builder(
                 scrollDirection: Axis.vertical,

@@ -10,7 +10,7 @@ class MyButton extends StatelessWidget {
   final double width;
   final double height;
   final VoidCallback onPressed;
-  final double fontSize;
+  final double? fontSize;
   final FontWeight fontWeight;
   final double? borderRadius; // Add borderRadius parameter
 
@@ -25,7 +25,7 @@ class MyButton extends StatelessWidget {
     required this.onPressed,
     required this.width,
     required this.height,
-    required this.fontSize,
+    this.fontSize,
     required this.fontWeight,
     this.borderRadius, // Default radius value
   });
@@ -73,7 +73,7 @@ class MyButton extends StatelessWidget {
                       Text(
                         text,
                         style: TextStyle(
-                          fontSize: fontSize,
+                          fontSize: fontSize ?? 12,
                           fontFamily: 'Poppins',
                           fontWeight: fontWeight,
                           color: textColor ?? Colors.black,
