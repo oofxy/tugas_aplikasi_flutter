@@ -17,7 +17,7 @@ class LibraryMenu extends StatelessWidget {
       backgroundColor: color().black,
       body: Container(
         margin: EdgeInsets.only(top: 79),
-        padding: EdgeInsets.symmetric(horizontal: 35.7),
+        padding: EdgeInsets.symmetric(horizontal: 28),
         child: Column(
           children: [
             Container(

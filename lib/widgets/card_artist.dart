@@ -22,8 +22,8 @@ class CardArtist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 305,
-      width: 375,
+      height: 315,
+      width: 385,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(6.0),
@@ -33,79 +33,82 @@ class CardArtist extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(6.0)),
+                borderRadius: BorderRadius.circular(6),
                 child: Image.network(
                   image,
-                  height: 175,
-                  width: 375,
+                  height: 200,
+                  width: 385,
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
-                height: 175,
-                width: 375,
+                height: 200,
+                width: 385,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
                   gradient: LinearGradient(
                     end: Alignment.bottomCenter,
                     begin: Alignment.center,
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.3),
+                      Colors.black.withOpacity(0.8),
                     ],
                   ),
                 ),
               ),
             ],
           ),
-          ListTile(
-            title: Stack(
-              children: [
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontFamily: 'AnonymousPro-Bold',
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 35),
-                  child: Text(
-                    followers + "K Followers",
+          Stack(children: [
+            ListTile(
+              title: Stack(
+                children: [
+                  Text(
+                    name,
                     style: TextStyle(
-                      fontSize: 13,
                       fontFamily: 'AnonymousPro-Bold',
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.only(top: 40),
+                    child: Text(
+                      followers + "K Followers",
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: 'AnonymousPro-Bold',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.more_horiz,
+                  size: 30,
+                  color: Colors.black,
                 ),
-              ],
-            ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_horiz,
-                size: 30,
-                color: Colors.black,
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 20),
-            child: MyButton(
-              text: isFavorite ? "Unfollow" : "Follow", // Update text based on isFavorite
-              textColor: isFavorite ? Colors.white : Colors.black,
-              backgroundColor: isFavorite ? Colors.black : Colors.white,
-              onPressed: onPressed,
-              width: 95,
-              height: 37,
-              icon: Icons.add,
-              iconColor: isFavorite ? Colors.white : Colors.black,
-              fontWeight: FontWeight.normal,
-              fontSize: 12,
-              outlinedColor: Colors.black,
-              borderRadius: 20,
+            Container(
+              margin: EdgeInsets.only(right: 20, top: 65),
+              child: MyButton(
+                text: isFavorite ? "Unfollow" : "Follow",
+                // Update text based on isFavorite
+                textColor: isFavorite ? Colors.white : Colors.black,
+                backgroundColor: isFavorite ? Colors.black : Colors.white,
+                onPressed: onPressed,
+                width: 95,
+                height: 38,
+                icon: Icons.add,
+                iconColor: isFavorite ? Colors.white : Colors.black,
+                fontWeight: FontWeight.normal,
+                outlinedColor: Colors.black,
+                borderRadius: 20,
+              ),
             ),
-          ),
+          ])
         ],
       ),
     );

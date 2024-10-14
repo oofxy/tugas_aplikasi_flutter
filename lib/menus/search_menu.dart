@@ -27,7 +27,7 @@ class SearchMenu extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  MyText(text: "Explore"),
+                  MyText(text: "Explore",),
                 ],
               ),
             ),
@@ -41,7 +41,6 @@ class SearchMenu extends StatelessWidget {
               hintTextColor: color().greyTextColor,
               height: 45,
               width: double.infinity,
-              controller: TextEditingController(), // Use a single controller if needed
             ),
             SizedBox(height: 10),
             Container(

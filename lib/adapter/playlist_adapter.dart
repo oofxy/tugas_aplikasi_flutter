@@ -10,14 +10,9 @@ class PlaylistAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
-        children: [
-          PlaylistCard(
-              playlistName: playlistModel.playlistName,
-              madeBy: playlistModel.madeBy,
-              image: playlistModel.image)
-        ],
-      ),
-    );
+        child: PlaylistCard(
+            playlistName: playlistModel.playlistName,
+            madeBy: playlistModel.madeBy,
+            image: playlistModel.image));
   }
 }

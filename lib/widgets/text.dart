@@ -17,6 +17,7 @@ class MyText extends StatelessWidget {
         fontWeight: fontWeight ?? FontWeight.w800,
         color: color ?? Colors.white,
         fontSize: fontSize ?? 27,
+        decoration: TextDecoration.none,
       ),
     );
   }
